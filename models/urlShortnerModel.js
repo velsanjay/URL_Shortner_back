@@ -9,8 +9,8 @@ const URLShortnerModel = new mongoose.Schema({
     shortUrl : {
         type:String,
         required:true,
-        unique: true,
-        default:shortId.generate()
+        default:shortId.generate(),
+        unique: true
     },
     clicks :{
         type : Number,
