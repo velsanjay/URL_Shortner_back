@@ -5,7 +5,7 @@ AllUrlRouter.get('/', async(req, res)=>{
     await urlShortnerModel.find({}).then((responce)=>{
         res.status(200).send({
             success:true,
-            message:"Data is fetched!!!",
+            message:"Data fetched successfully!!!",
             data:responce
         })
     }).catch((error)=>{

@@ -15,7 +15,7 @@ NewUrlRouter.post('/new', async(req,res)=>{
    urlShort.save().then((responce)=>{
     res.status(200).send({
         success:true,
-        message:"URL Created Successfully!!!",
+        message:"Short URL Created Successfully!!!",
         data:responce
     })
    }).catch((error)=>{
