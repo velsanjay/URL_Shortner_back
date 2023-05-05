@@ -7,9 +7,21 @@ NewUrlRouter.post('/new', async(req,res)=>{
     const url = await URLShortnerModel.findOne({LongUrl:LongUrl})
 
     if(!url){
+        function makeid() {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            let counter = 0;
+            while (counter < 5) {
+              result += characters.charAt(Math.floor(Math.random() * charactersLength));
+              counter += 1;
+            }
+            return result;
+        }
 
    const urlShort = new URLShortnerModel({
-    LongUrl
+    LongUrl,
+    shortUrl:makeid()
    })
 
    urlShort.save().then((responce)=>{
