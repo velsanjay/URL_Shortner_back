@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/url',NewUrlRouter)
-app.use('/url',GetUrlRouter)
+app.use('/',NewUrlRouter)
+app.use('/',GetUrlRouter)
 app.use('/',AllUrlRouter)
 
 // app.get('/', (req, res)=>{
